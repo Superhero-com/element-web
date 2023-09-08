@@ -46,7 +46,7 @@ const CompatibilityView: React.FC<IProps> = ({ onAccept }) => {
                     rel="noreferrer noopener"
                     className="mx_ClearDecoration"
                 >
-                    <img height="48" src="themes/element/img/download/apple.svg" alt="Apple App Store" />
+                    <img height="48" src="themes/superhero/img/download/apple.svg" alt="Apple App Store" />
                 </a>
             </>
         );
@@ -69,7 +69,7 @@ const CompatibilityView: React.FC<IProps> = ({ onAccept }) => {
                 className="mx_ClearDecoration"
                 key="android"
             >
-                <img height="48" src="themes/element/img/download/google.svg" alt="Google Play Store" />
+                <img height="48" src="themes/superhero/img/download/google.svg" alt="Google Play Store" />
             </a>,
         );
     }
@@ -83,7 +83,7 @@ const CompatibilityView: React.FC<IProps> = ({ onAccept }) => {
                 className="mx_ClearDecoration"
                 key="fdroid"
             >
-                <img height="48" src="themes/element/img/download/fdroid.svg" alt="F-Droid" />
+                <img height="48" src="themes/superhero/img/download/fdroid.svg" alt="F-Droid" />
             </a>,
         );
     }
@@ -102,7 +102,7 @@ const CompatibilityView: React.FC<IProps> = ({ onAccept }) => {
             <div className="mx_ErrorView_container">
                 <div className="mx_HomePage_header">
                     <span className="mx_HomePage_logo">
-                        <img height="42" src="themes/element/img/logos/element-logo.svg" alt="Element" />
+                        <img height="42" src="themes/superhero/img/logos/superhero-logo.svg" alt="Superhero" />
                     </span>
                     <h1>{_t("incompatible_browser|title")}</h1>
                 </div>

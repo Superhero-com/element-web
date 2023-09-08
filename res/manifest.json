@@ -1,8 +1,8 @@
 {
-    "name": "Element",
-    "short_name": "Element",
+    "name": "Superhero",
+    "short_name": "Superhero",
     "display": "standalone",
-    "theme_color": "#76CFA6",
+    "theme_color": "#1161fe",
     "start_url": "index.html",
     "icons": [
         {
