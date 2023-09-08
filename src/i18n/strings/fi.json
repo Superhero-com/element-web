@@ -35,5 +35,5 @@
     "unknown_device": "Tuntematon laite",
     "use_brand_on_mobile": "Käytä %(brand)sia mobiilisti",
     "web_default_device_name": "%(appName)s: %(browserName)s käyttöjärjestelmällä %(osName)s",
-    "welcome_to_element": "Tervetuloa Element-sovellukseen"
+    "welcome_to_superhero": "Tervetuloa Superhero-sovellukseen"
 }

@@ -35,5 +35,5 @@
     "unknown_device": "Tundmatu seade",
     "use_brand_on_mobile": "Kasuta rakendust %(brand)s nutiseadmes",
     "web_default_device_name": "%(appName)s: %(browserName)s operatsioonisüsteemis %(osName)s",
-    "welcome_to_element": "Tere tulemast kasutama suhtlusrakendust Element"
+    "welcome_to_superhero": "Tere tulemast kasutama suhtlusrakendust Superhero"
 }

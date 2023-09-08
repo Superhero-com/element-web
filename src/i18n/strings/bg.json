@@ -34,5 +34,5 @@
     "unknown_device": "Непознато устройство",
     "use_brand_on_mobile": "Използвайте %(brand)s на мобилен телефон",
     "web_default_device_name": "%(appName)s: %(browserName)s под %(osName)s",
-    "welcome_to_element": "Добре дошли в Element"
+    "welcome_to_superhero": "Добре дошли в Superhero"
 }

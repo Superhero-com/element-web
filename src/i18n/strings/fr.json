@@ -36,5 +36,5 @@
     "unknown_device": "Appareil inconnu",
     "use_brand_on_mobile": "Utiliser %(brand)s sur téléphone",
     "web_default_device_name": "%(appName)s : %(browserName)s pour %(osName)s",
-    "welcome_to_element": "Bienvenue sur Element"
+    "welcome_to_superhero": "Bienvenue sur Superhero"
 }

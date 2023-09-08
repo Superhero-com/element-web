@@ -35,5 +35,5 @@
     "unknown_device": "Ismeretlen eszköz",
     "use_brand_on_mobile": "Mobilon használja ezt: %(brand)s",
     "web_default_device_name": "%(appName)s: (%(browserName)s itt: %(osName)s)",
-    "welcome_to_element": "Üdvözli az Element"
+    "welcome_to_superhero": "Üdvözli az Superhero"
 }
