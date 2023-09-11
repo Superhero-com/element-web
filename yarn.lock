@@ -2767,15 +2767,17 @@
     "@typescript-eslint/types" "5.62.0"
     eslint-visitor-keys "^3.3.0"
 
-"@vector-im/compound-design-tokens@github:Superhero-com/compound-design-tokens#main":
+"@vector-im/compound-design-tokens@^0.0.5":
   version "0.0.5"
-  resolved "https://codeload.github.com/Superhero-com/compound-design-tokens/tar.gz/194ed42da6eb2bae6ae1094b0e8d98373883de81"
+  resolved "https://registry.yarnpkg.com/@vector-im/compound-design-tokens/-/compound-design-tokens-0.0.5.tgz#33ef2c9dae9c52bbf2a6a62ddc143dbb4efa1a00"
+  integrity sha512-JSe2IXe374jVk7It6HnSGnri1+g47sTv/aP+hsxtex85OpK84Gd/WxBViNQHGBCT3dhPYKjIwodyB52EsXDWZQ==
   dependencies:
     svg2vectordrawable "^2.9.1"
 
-"@vector-im/compound-web@github:Superhero-com/compound-web#main":
-  version "0.3.1"
-  resolved "https://codeload.github.com/Superhero-com/compound-web/tar.gz/be7d172e69cbafebdcc4ebd83cb84c6eaec520f8"
+"@vector-im/compound-web@^0.2.3":
+  version "0.2.18"
+  resolved "https://registry.yarnpkg.com/@vector-im/compound-web/-/compound-web-0.2.18.tgz#b92bcfd5779b1e558dc431ad3d330960749049d9"
+  integrity sha512-fs+tQYZMA4/KxGFOdoDM9WKf7IpeNILI37q2uj4dJj8SkI33zwUnzHFuTD04YI33Dc3FCZHcCd/d0m/fCnRaFg==
   dependencies:
     "@radix-ui/react-form" "^0.0.3"
     "@radix-ui/react-tooltip" "^1.0.6"
@@ -8864,9 +8866,9 @@ matrix-mock-request@^2.5.0:
   dependencies:
     expect "^28.1.0"
 
-"matrix-react-sdk@github:Superhero-com/matrix-react-sdk#develop":
+"matrix-react-sdk@github:matrix-org/matrix-react-sdk#develop":
   version "3.79.0"
-  resolved "https://codeload.github.com/Superhero-com/matrix-react-sdk/tar.gz/95bd10cb93ec73337ae89032fb6bcad376b7f8fa"
+  resolved "https://codeload.github.com/matrix-org/matrix-react-sdk/tar.gz/493d5083a8bd1477d0b248b7799a8b4ce6815030"
   dependencies:
     "@babel/runtime" "^7.12.5"
     "@matrix-org/analytics-events" "^0.7.0"
@@ -8877,8 +8879,8 @@ matrix-mock-request@^2.5.0:
     "@sentry/browser" "^7.0.0"
     "@sentry/tracing" "^7.0.0"
     "@testing-library/react-hooks" "^8.0.1"
-    "@vector-im/compound-design-tokens" "github:Superhero-com/compound-design-tokens#main"
-    "@vector-im/compound-web" "github:Superhero-com/compound-web#main"
+    "@vector-im/compound-design-tokens" "^0.0.5"
+    "@vector-im/compound-web" "^0.2.3"
     await-lock "^2.1.0"
     blurhash "^1.1.3"
     classnames "^2.2.6"

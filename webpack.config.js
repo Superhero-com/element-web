@@ -32,14 +32,14 @@ if (!process.env.VERSION) {
 
 const cssThemes = {
     // CSS themes
-    "theme-legacy-light": "./node_modules/matrix-react-sdk/res/themes/legacy-light/css/legacy-light.pcss",
-    "theme-legacy-dark": "./node_modules/matrix-react-sdk/res/themes/legacy-dark/css/legacy-dark.pcss",
-    "theme-light": "./node_modules/matrix-react-sdk/res/themes/light/css/light.pcss",
+    "theme-legacy-light": "./res/themes/legacy-light/css/legacy-light.pcss",
+    "theme-legacy-dark": "./res/themes/legacy-dark/css/legacy-dark.pcss",
+    "theme-light": "./res/themes/light/css/light.pcss",
     "theme-light-high-contrast":
-        "./node_modules/matrix-react-sdk/res/themes/light-high-contrast/css/light-high-contrast.pcss",
-    "theme-dark": "./node_modules/matrix-react-sdk/res/themes/dark/css/dark.pcss",
-    "theme-light-custom": "./node_modules/matrix-react-sdk/res/themes/light-custom/css/light-custom.pcss",
-    "theme-dark-custom": "./node_modules/matrix-react-sdk/res/themes/dark-custom/css/dark-custom.pcss",
+        "./res/themes/light-high-contrast/css/light-high-contrast.pcss",
+    "theme-dark": "./res/themes/dark/css/dark.pcss",
+    "theme-light-custom": "./res/themes/light-custom/css/light-custom.pcss",
+    "theme-dark-custom": "./res/themes/dark-custom/css/dark-custom.pcss",
 };
 
 function getActiveThemes() {
@@ -129,6 +129,10 @@ module.exports = (env, argv) => {
     const jsSdkSrcDir = path.resolve(require.resolve("matrix-js-sdk/package.json"), "..", "src");
 
     const ACTIVE_THEMES = getActiveThemes();
+    console.info('========================');
+    console.info('ACTIVE_THEMES ::', ACTIVE_THEMES);
+    console.info('========================');
+
     function getThemesImports() {
         const imports = ACTIVE_THEMES.map((t) => {
             return cssThemes[`theme-${t}`].replace("./node_modules/", ""); // theme import path
