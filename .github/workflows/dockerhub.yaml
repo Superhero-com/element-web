@@ -36,7 +36,7 @@ jobs:
               uses: docker/metadata-action@818d4b7b91585d195f67373fd9cb0332e31a7175 # v4
               with:
                   images: |
-                      aeternity/element-io
+                      superherodotcom/element-web
                   tags: |
                       type=ref,event=branch
                       type=ref,event=tag
@@ -58,4 +58,4 @@ jobs:
               with:
                   username: ${{ secrets.DOCKERHUB_USERNAME }}
                   password: ${{ secrets.DOCKERHUB_TOKEN }}
-                  repository: aeternity/element-io
+                  repository: superherodotcom/element-web
