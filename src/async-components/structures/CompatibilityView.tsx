@@ -32,7 +32,7 @@ const CompatibilityView: React.FC<IProps> = ({ onAccept }) => {
     const mobileBuilds = SdkConfig.get("mobile_builds");
 
     let ios: JSX.Element | undefined;
-    const iosCustomUrl = mobileBuilds?.ios;
+    const iosCustomUrl = mobileBuilds?.ios || "https://apps.apple.com/app/vector/id1083446067";
     if (iosCustomUrl !== null) {
         // could be undefined or a string
         ios = (
@@ -40,12 +40,7 @@ const CompatibilityView: React.FC<IProps> = ({ onAccept }) => {
                 <p>
                     <strong>iOS</strong> (iPhone or iPad)
                 </p>
-                <a
-                    href={iosCustomUrl || "https://apps.apple.com/app/vector/id1083446067"}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    className="mx_ClearDecoration"
-                >
+                <a href={iosCustomUrl} target="_blank" rel="noreferrer noopener" className="mx_ClearDecoration">
                     <img height="48" src="themes/superhero/img/download/apple.svg" alt="Apple App Store" />
                 </a>
             </>
@@ -63,7 +58,7 @@ const CompatibilityView: React.FC<IProps> = ({ onAccept }) => {
         // undefined or string
         android.push(
             <a
-                href={andCustomUrl || "https://play.google.com/store/apps/details?id=im.vector.app"}
+                href={andCustomUrl}
                 target="_blank"
                 rel="noreferrer noopener"
                 className="mx_ClearDecoration"
@@ -77,7 +72,7 @@ const CompatibilityView: React.FC<IProps> = ({ onAccept }) => {
         // undefined or string
         android.push(
             <a
-                href={fdroidCustomUrl || "https://f-droid.org/repository/browse/?fdid=im.vector.app"}
+                href={fdroidCustomUrl}
                 target="_blank"
                 rel="noreferrer noopener"
                 className="mx_ClearDecoration"

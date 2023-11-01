@@ -128,11 +128,15 @@ Enables rendering of MD / HTML in room topics.
 
 Configures Element to use a new cryptography implementation based on the [matrix-rust-sdk](https://github.com/matrix-org/matrix-rust-sdk).
 
-This setting is (currently) _sticky_ to a user's session: it only takes effect when the user logs in to a new session. Likewise, even after disabling the setting in `config.json`, the Rust implemention will remain in use until users log out.
+This setting is (currently) _sticky_ to a user's session: it only takes effect when the user logs in to a new session. Likewise, even after disabling the setting in `config.json`, the Rust implementation will remain in use until users log out.
 
 ## New room header & details (`feature_new_room_decoration_ui`) [In Development]
 
 Refactors visually the room header and room sidebar
+
+## Enable the notifications panel in the room header (`feature_notifications`)
+
+Unreliable in encrypted rooms.
 
 ## Knock rooms (`feature_ask_to_join`) [In Development]
 
