@@ -10,7 +10,7 @@ jobs:
         runs-on: ubuntu-latest
         if: github.repository == 'vector-im/element-web'
         steps:
-            - uses: actions/github-script@v6
+            - uses: actions/github-script@v7
               id: main
               with:
                   # PAT needed as the GITHUB_TOKEN won't be able to see cross-references from other orgs (matrix-org)
@@ -142,7 +142,7 @@ jobs:
                           });
                         }
                       }
-            - uses: actions/github-script@v6
+            - uses: actions/github-script@v7
               name: Close duplicate as Not Planned
               if: steps.main.outputs.closeAsNotPlanned
               with:
