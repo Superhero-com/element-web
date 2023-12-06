@@ -1,17 +1,25 @@
-.sh_RoomTokenGatedRoom {
+.sh_RoomTokenGatedRoom,
+.mx_InviteDialog_tile_nameStack_name {
     align-items: center;
     display: flex;
 }
 
-.sh_RoomTokenGatedRoomIcon {
+.sh_RoomTokenGatedRoomIcon,
+.sh_VerifiedIcon {
     width: 16px;
     height: 16px;
     margin-right: 4px;
 }
 
-h2 .sh_RoomTokenGatedRoomIcon {
+h2 .sh_RoomTokenGatedRoomIcon,
+h2 .sh_VerifiedIcon {
     width: 26px;
     height: 26px;
+}
+
+.sh_VerifiedIcon {
+    margin-right: 4px;
+    margin-left: 4px;
 }
 
 .mx_QuickSettingsButton.sh_SuperheroDexButton::before {
