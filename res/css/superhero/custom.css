@@ -22,6 +22,12 @@ h2 .sh_VerifiedIcon {
     margin-left: 4px;
 }
 
+.mx_UserInfo_profile .sh_VerifiedIcon {
+    width: 18px;
+    height: 18px;
+    margin-top: 3px;
+}
+
 .mx_QuickSettingsButton.sh_SuperheroDexButton::before {
     -webkit-mask-image: url("../../themes/superhero/img/icons/diamond.svg");
     mask-image: url("../../themes/superhero/img/icons/diamond.svg");
