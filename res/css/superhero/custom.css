@@ -23,13 +23,13 @@ h2 .sh_VerifiedIcon {
 }
 
 .mx_QuickSettingsButton.sh_SuperheroDexButton::before {
-    -webkit-mask-image: url(../../themes/superhero/img/icons/diamond.svg);
-    mask-image: url(../../themes/superhero/img/icons/diamond.svg);
+    -webkit-mask-image: url("../../themes/superhero/img/icons/diamond.svg");
+    mask-image: url("../../themes/superhero/img/icons/diamond.svg");
 }
 
 .mx_QuickSettingsButton.sh_MintTokenButton::before {
-    -webkit-mask-image: url(../../themes/superhero/img/icons/tokens.svg);
-    mask-image: url(../../themes/superhero/img/icons/tokens.svg);
+    -webkit-mask-image: url("../../themes/superhero/img/icons/tokens.svg");
+    mask-image: url("../../themes/superhero/img/icons/tokens.svg");
 }
 
 
