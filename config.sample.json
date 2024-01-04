@@ -47,5 +47,6 @@
         "brand": "Element Call"
     },
     "map_style_url": "https://api.maptiler.com/maps/streets/style.json?key=fU3vlMsMn4Jb6dnEIFsx",
-    "community_bot_user_id": "@communitybot:superhero.com"
+    "community_bot_user_id": "@communitybot:superhero.com",
+    "affiliation_registration_endpoint": "https://matrix.superhero.com/ae-wallet-bot/register/"
 }
