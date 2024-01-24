@@ -12,7 +12,7 @@ import { BareUser, communityBotAtom } from "../../../atoms";
 /**
  * Converts the member to a DirectoryMember and starts a DM with them.
  */
-async function openDmForUser(matrixClient: MatrixClient, user: Member | BareUser): Promise<void> {
+export async function openDmForUser(matrixClient: MatrixClient, user: Member | BareUser): Promise<void> {
     const avatarUrl = user instanceof User ? user.avatarUrl : user instanceof RoomMember ? user.getMxcAvatarUrl() : "";
     const startDmUser = new DirectoryMember({
         user_id: user.userId,
