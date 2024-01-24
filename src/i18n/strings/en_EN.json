@@ -45,5 +45,6 @@
     "room": {
         "no_peek_join_prompt_community": "%(roomName)s is a private token-gated room.",
         "no_peek_join_prompt_community_threshold": "You need to own %(threshold)s %(symbol)s tokens to access it."
-    }
+    },
+    "invite_code_label": "Invite code"
 }
