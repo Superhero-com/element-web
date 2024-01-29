@@ -7,7 +7,7 @@ import { useAtom } from "jotai";
 
 import { Member } from "../right_panel/UserInfo";
 import { Icon as SendMessage } from "../../../../res/themes/superhero/img/icons/send.svg";
-import { BareUser, communityBotAtom } from "../../../atoms";
+import { BareUser, botAccountsAtom } from "../../../atoms";
 
 /**
  * Converts the member to a DirectoryMember and starts a DM with them.
@@ -51,7 +51,12 @@ export const MessageButton = ({
 };
 
 export const MessageCommunityBotButton = ({ text = "Send Message" }: { text?: string }): JSX.Element => {
-    const [communityBot] = useAtom(communityBotAtom);
+    const [botAccounts] = useAtom(botAccountsAtom);
 
-    return <MessageButton member={communityBot} text={text} />;
+    const botUser = {
+        userId: botAccounts?.communityBot || "",
+        rawDisplayName: "Community Bot",
+    } as Member;
+
+    return <MessageButton member={botUser} text={text} />;
 };

@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import { useAtom } from "jotai";
 
-import { verifiedBotsAtom } from "../atoms";
+import { botAccountsAtom } from "../atoms";
 
 /**
  * Custom hook to check if a bot is verified.
@@ -9,11 +9,14 @@ import { verifiedBotsAtom } from "../atoms";
  * @returns A boolean indicating whether the bot is verified or not.
  */
 export function useVerifiedBot(botId?: string): boolean {
-    const [verifiedBots] = useAtom(verifiedBotsAtom);
+    const [botAccounts] = useAtom(botAccountsAtom);
 
-    const isVerifiedBot: boolean = useMemo(() => {
-        return !!(botId && !!verifiedBots[botId]);
-    }, [botId, verifiedBots]);
-
-    return isVerifiedBot;
+    return useMemo(() => {
+        return !!(
+            botId &&
+            (botId === botAccounts?.communityBot ||
+                botId === botAccounts?.superheroBot ||
+                botId === botAccounts?.blockchainBot)
+        );
+    }, [botId, botAccounts]);
 }
