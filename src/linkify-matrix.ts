@@ -33,6 +33,7 @@ import dis from "matrix-react-sdk/src/dispatcher/dispatcher";
 import { PERMITTED_URL_SCHEMES } from "matrix-react-sdk/src/utils/UrlUtils";
 
 import { openDmForUser } from "./components/views/elements/MessageButton";
+import { isVerifiedBot } from "./hooks/useVerifiedBot";
 
 export enum Type {
     URL = "url",
@@ -102,8 +103,9 @@ function matrixOpaqueIdLinkifyParser({
 function onUserClick(event: MouseEvent, userId: string): void {
     event.preventDefault();
 
+
     const client = MatrixClientPeg.get();
-    if (client && userId.startsWith("@bot3")) {
+    if (client && isVerifiedBot(userId)) {
         void openDmForUser(client, { userId, rawDisplayName: userId });
     } else {
         dis.dispatch<ViewUserPayload>({
