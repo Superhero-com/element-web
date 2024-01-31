@@ -32,8 +32,8 @@ import { MatrixClientPeg } from "matrix-react-sdk/src/MatrixClientPeg";
 import dis from "matrix-react-sdk/src/dispatcher/dispatcher";
 import { PERMITTED_URL_SCHEMES } from "matrix-react-sdk/src/utils/UrlUtils";
 
-import { openDmForUser } from "./components/views/elements/MessageButton";
 import { isVerifiedBot } from "./hooks/useVerifiedBot";
+import { openDmForUser } from "./utils";
 
 export enum Type {
     URL = "url",
@@ -102,7 +102,6 @@ function matrixOpaqueIdLinkifyParser({
 
 function onUserClick(event: MouseEvent, userId: string): void {
     event.preventDefault();
-
 
     const client = MatrixClientPeg.get();
     if (client && isVerifiedBot(userId)) {
