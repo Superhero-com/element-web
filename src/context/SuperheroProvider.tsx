@@ -1,7 +1,7 @@
 import { useAtom } from "jotai";
 import React, { useCallback, useEffect } from "react";
 
-import { communityBotAtom, minimumTokenThresholdAtom, verifiedAccountsAtom, botAccountsAtom } from "../atoms";
+import { minimumTokenThresholdAtom, verifiedAccountsAtom, botAccountsAtom } from "../atoms";
 
 type BotAccounts = {
     domain: string;
@@ -52,14 +52,6 @@ const useMinimumTokenThreshold = (config: any): void => {
 export const SuperheroProvider = ({ children, config }: any): any => {
     const [verifiedAccounts, setVerifiedAccounts] = useAtom(verifiedAccountsAtom);
     const [, setBotAccounts] = useAtom(botAccountsAtom);
-    const [, setCommunityBot] = useAtom(communityBotAtom);
-
-    useEffect(() => {
-        setCommunityBot({
-            userId: config.community_bot_user_id,
-            rawDisplayName: "Community DAO Room Bot",
-        });
-    }, [setCommunityBot, config.community_bot_user_id]);
 
     function loadVerifiedAccounts(): void {
         if (config.bots_backend_url) {

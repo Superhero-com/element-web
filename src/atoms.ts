@@ -20,10 +20,6 @@ type BotAccounts = {
 export const verifiedAccountsAtom = atomWithStorage<Record<string, string>>("VERIFIED_ACCOUNTS", {});
 export const botAccountsAtom = atomWithStorage<BotAccounts | null>("BOT_ACCOUNTS", null);
 export const minimumTokenThresholdAtom = atomWithStorage<Record<string, TokenThreshold>>("TOKEN_THRESHOLD", {});
-export const communityBotAtom = atomWithStorage<BareUser>("COMMUNITY_BOT", {
-    userId: "",
-    rawDisplayName: "",
-});
 
 export function getBotAccountData(): BotAccounts | null {
     const defaultStore = getDefaultStore();
