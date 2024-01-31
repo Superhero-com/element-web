@@ -82,9 +82,9 @@ export const SuperheroProvider = ({ children, config }: any): any => {
                 .then((res) => res.json())
                 .then((data: BotAccounts) => {
                     setBotAccounts({
-                        communityBot: "@" + data.domain + ":" + data.communityBot.userId,
-                        superheroBot: "@" + data.domain + ":" + data.superheroBot.userId,
-                        blockchainBot: "@" + data.domain + ":" + data.blockchainBot.userId,
+                        communityBot: "@" + data.communityBot.userId + ":" + data.domain,
+                        superheroBot: "@" + data.superheroBot.userId + ":" + data.domain,
+                        blockchainBot: "@" + data.blockchainBot.userId + ":" + data.domain,
                     });
                 })
                 .catch(() => {
