@@ -25,6 +25,6 @@
     "src/components/views/dialogs/FeedbackDialog.tsx": "src/components/views/dialogs/FeedbackDialog.tsx",
     "src/components/views/user-onboarding/UserOnboardingHeader.tsx": "src/components/views/user-onboarding/UserOnboardingHeader.tsx",
     "src/components/views/dialogs/AppDownloadDialog.tsx": "src/components/views/dialogs/AppDownloadDialog.tsx",
-    "src/components/structures/auth/Registration.tsx": "src/components/structures/auth/Registration.tsx"
+    "src/components/structures/auth/Registration.tsx": "src/components/structures/auth/Registration.tsx",
     "src/components/structures/auth/Login.tsx": "src/components/structures/auth/Login.tsx"
 }
