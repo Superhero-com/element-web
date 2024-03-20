@@ -31,7 +31,6 @@ import {
 import React, { Fragment, ReactNode } from "react";
 import classNames from "classnames";
 import { logger } from "matrix-js-sdk/src/logger";
-
 import { _t } from "matrix-react-sdk/src/languageHandler";
 import {
     adminContactStrings,
@@ -58,6 +57,8 @@ import SettingsStore from "matrix-react-sdk/src/settings/SettingsStore";
 import { ValidatedServerConfig } from "matrix-react-sdk/src/utils/ValidatedServerConfig";
 import { Features } from "matrix-react-sdk/src/settings/Settings";
 import { startOidcLogin } from "matrix-react-sdk/src/utils/oidc/authorize";
+
+import SuperheroRegister from "./SuperheroRegister";
 
 const debuglog = (...args: any[]): void => {
     if (SettingsStore.getValue("debug_registration")) {
@@ -109,8 +110,8 @@ interface IState {
     completedNoSignin: boolean;
     flows:
         | {
-        stages: string[];
-    }[]
+              stages: string[];
+          }[]
         | null;
     // We perform liveliness checks later, but for now suppress the errors.
     // We also track the server dead errors independently of the regular errors so
@@ -603,6 +604,7 @@ export default class Registration extends React.Component<IProps, IState> {
             return (
                 <React.Fragment>
                     {ssoSection}
+                    <SuperheroRegister matrixClient={this.state.matrixClient} />
                     <RegistrationForm
                         defaultUsername={this.state.formVals.username}
                         defaultEmail={this.state.formVals.email}
