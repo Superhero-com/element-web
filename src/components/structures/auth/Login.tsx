@@ -40,6 +40,8 @@ import { filterBoolean } from "matrix-react-sdk/src/utils/arrays";
 import { Features } from "matrix-react-sdk/src/settings/Settings";
 import { startOidcLogin } from "matrix-react-sdk/src/utils/oidc/authorize";
 
+import SuperheroLogin from "./SuperheroLogin";
+
 interface IProps {
     serverConfig: ValidatedServerConfig;
     // If true, the component will consider itself busy.
@@ -205,7 +207,6 @@ export default class LoginComponent extends React.PureComponent<IProps, IState> 
         this.loginLogic.loginViaPassword(username, phoneCountry, phoneNumber, password).then(
             (data) => {
                 this.setState({ serverIsAlive: true }); // it must be, we logged in.
-                debugger;
                 this.props.onLoggedIn(data, password);
             },
             (error) => {
@@ -322,9 +323,9 @@ export default class LoginComponent extends React.PureComponent<IProps, IState> 
     };
 
     private async checkServerLiveliness({
-                                            hsUrl,
-                                            isUrl,
-                                        }: Pick<ValidatedServerConfig, "hsUrl" | "isUrl">): Promise<void> {
+        hsUrl,
+        isUrl,
+    }: Pick<ValidatedServerConfig, "hsUrl" | "isUrl">): Promise<void> {
         // Do a quick liveliness check on the URLs
         try {
             const { warning } = await AutoDiscoveryUtils.validateServerConfigWithStaticUrls(hsUrl, isUrl);
@@ -430,28 +431,7 @@ export default class LoginComponent extends React.PureComponent<IProps, IState> 
                     const stepRenderer = this.stepRendererMap[flow.type];
                     return <React.Fragment key={flow.type}>{stepRenderer()}</React.Fragment>;
                 })}
-                <React.Fragment>
-                    <h2 className="mx_AuthBody_centered">
-                        {_t("auth|sso_or_username_password", {
-                            ssoButtons: "",
-                            usernamePassword: "",
-                        }).trim()}
-                    </h2>
-                    <AccessibleButton kind="primary"
-                                      onClick={() => {
-                                          this.props.onLoggedIn(
-                                              {
-                                                  accessToken: "syt_YWRtaW4_FYROQGmZxDXItzDAypOg_05XhQ4",
-                                                  deviceId: "ANAFTTTDBM",
-                                                  homeserverUrl: "http://localhost:8008",
-                                                  identityServerUrl: "https://vector.im",
-                                                  userId: "@admin:localhost",
-                                              }, "");
-                                      }}>
-                        Superhero Wallet
-                    </AccessibleButton>
-
-                </React.Fragment>
+                <SuperheroLogin onLoggedIn={this.props.onLoggedIn} loginLogic={this.loginLogic} />
             </React.Fragment>
         );
     }
