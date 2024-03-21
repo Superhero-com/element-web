@@ -40,7 +40,6 @@ export default class SuperheroRegister extends React.Component<IProps, IState> {
         // TODO find a way to fetch the server name
         const config = SdkConfig.get();
         const serverName = config.default_server_config?.["m.homeserver"]?.server_name;
-
         // redirect to wallet
         const { signTransactionUrl } = await fetch(
             `http://localhost:3000/ui/get-registration-tx/@${this.state.username}:${serverName}/${this.state.address}`,

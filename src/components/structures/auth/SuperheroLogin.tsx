@@ -39,22 +39,21 @@ export default class SuperheroLogin extends React.Component<IProps, IState> {
         const config = SdkConfig.get();
         const serverName = config.default_server_config?.["m.homeserver"]?.server_name;
         const userId = `@${this.state.username}:${serverName}`;
-        const currentUrl = window.location.href;
-        const callbackUrl = encodeURIComponent(currentUrl + "?signature={signature}&user=" + userId);
-        const walletUrl = `https://wallet.superhero.com/sign-message?message={"userId":"${userId}"}&jwt=true&x-success=${callbackUrl}`;
+        const callbackUrl = encodeURIComponent(
+            window.location.origin + "?signature={signature}&user=" + userId + window.location.hash,
+        );
+        const walletUrl = `https://wallet.superhero.com/sign-message?message={"user_id":"${userId}"}&jwt=true&x-success=${callbackUrl}`;
         console.log(walletUrl);
         window.location.href = walletUrl;
     };
 
     public async componentDidMount(): Promise<void> {
-        console.log("SuperheroLogin componentDidMount");
-        console.log(window.location.href);
         // if url contains signature do login
         const url = new URL(window.location.href);
         const signature = url.searchParams.get("signature");
         if (signature) {
             const userId = url.searchParams.get("user");
-            // const accessToken;
+            window.history.replaceState({}, document.title, "/#/login");
             const hsUrl = this.props.loginLogic.getHomeserverUrl();
             const isUrl = this.props.loginLogic.getIdentityServerUrl();
             const response = await sendLoginRequest(hsUrl, isUrl, "m.login.jwt", {
@@ -64,7 +63,6 @@ export default class SuperheroLogin extends React.Component<IProps, IState> {
                 },
                 token: signature,
             });
-            debugger;
             this.props.onLoggedIn(response, "");
         }
     }
