@@ -270,6 +270,7 @@ const NewRoomIntro: React.FC = () => {
 
                 <h2>
                     <RoomName room={room} />
+                    {console.log(room)}
                 </h2>
 
                 <p>
