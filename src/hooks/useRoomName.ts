@@ -32,4 +32,3 @@ export function getRoomName(room?: Room | IPublicRoomsChunkRoom, oobName?: IOOBD
         (roomName || "").replace(":", ":\u200b"), // add a zero-width space to allow linewrapping after the colon (matrix defaults)
     );
 }
-
