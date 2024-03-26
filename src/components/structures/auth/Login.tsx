@@ -139,6 +139,7 @@ export default class LoginComponent extends React.PureComponent<IProps, IState> 
             // eslint-disable-next-line @typescript-eslint/naming-convention
             "m.login.sso": () => this.renderSsoStep("sso"),
             "oidcNativeFlow": () => this.renderOidcNativeStep(),
+            "m.login.jwt": this.renderJWTStep,
         };
     }
 
@@ -422,7 +423,7 @@ export default class LoginComponent extends React.PureComponent<IProps, IState> 
         if (!this.state.flows) return null;
 
         // this is the ideal order we want to show the flows in
-        const order = ["oidcNativeFlow", "m.login.password", "m.login.sso"];
+        const order = ["m.login.jwt", "oidcNativeFlow", "m.login.password", "m.login.sso"];
 
         const flows = filterBoolean(order.map((type) => this.state.flows?.find((flow) => flow.type === type)));
         return (
@@ -431,7 +432,6 @@ export default class LoginComponent extends React.PureComponent<IProps, IState> 
                     const stepRenderer = this.stepRendererMap[flow.type];
                     return <React.Fragment key={flow.type}>{stepRenderer()}</React.Fragment>;
                 })}
-                <SuperheroLogin onLoggedIn={this.props.onLoggedIn} loginLogic={this.loginLogic} />
             </React.Fragment>
         );
     }
@@ -489,6 +489,10 @@ export default class LoginComponent extends React.PureComponent<IProps, IState> 
                 action={SSOAction.LOGIN}
             />
         );
+    };
+
+    private renderJWTStep = (): React.ReactNode => {
+        return (<SuperheroLogin onLoggedIn={this.props.onLoggedIn} loginLogic={this.loginLogic} />);
     };
 
     public render(): React.ReactNode {

@@ -70,16 +70,16 @@ export default class SuperheroLogin extends React.Component<IProps, IState> {
     public render(): React.ReactNode {
         return (
             <React.Fragment>
+                <Field type="text" label="Username" value={this.state.username} onChange={this.onUsernameChanged} />
+                <AccessibleButton kind="primary" className="mx_Login_submit" onClick={this.onContinueWithSuperhero}>
+                    Sign in with Superhero Wallet
+                </AccessibleButton>
                 <h2 className="mx_AuthBody_centered">
                     {_t("auth|sso_or_username_password", {
                         ssoButtons: "",
                         usernamePassword: "",
                     }).trim()}
                 </h2>
-                <Field type="text" label="Username" value={this.state.username} onChange={this.onUsernameChanged} />
-                <AccessibleButton kind="primary" onClick={this.onContinueWithSuperhero}>
-                    Superhero Wallet
-                </AccessibleButton>
             </React.Fragment>
         );
     }
