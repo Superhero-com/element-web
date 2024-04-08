@@ -17,7 +17,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import React, { useCallback, useContext, useEffect, useState } from "react";
+import React, { forwardRef, useCallback, useContext, useEffect, useState} from "react";
 import classNames from "classnames";
 import { ClientEvent } from "matrix-js-sdk/src/matrix";
 import { Avatar } from "@vector-im/compound-web";
@@ -96,7 +96,7 @@ const useImageUrl = ({ url, urls }: { url?: string | null; urls?: string[] }): [
     return [imageUrl, onError];
 };
 
-const BaseAvatar: React.FC<IProps> = (props) => {
+const BaseAvatar: React.FC<IProps> = forwardRef<HTMLElement, IProps>((props, ref) => {
     const {
         name,
         idName,
@@ -144,7 +144,7 @@ const BaseAvatar: React.FC<IProps> = (props) => {
             data-testid="avatar-img"
         />
     );
-};
+});
 
 export default BaseAvatar;
 export type BaseAvatarType = React.FC<IProps>;
