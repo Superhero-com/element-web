@@ -105,7 +105,6 @@ const BaseAvatar: React.FC<IProps> = forwardRef<HTMLElement, IProps>((props, ref
         urls,
         size = "40px",
         onClick,
-        inputRef,
         className,
         type = "round",
         altText = _t("common|avatar"),
@@ -128,7 +127,7 @@ const BaseAvatar: React.FC<IProps> = forwardRef<HTMLElement, IProps>((props, ref
 
     return (
         <Avatar
-            ref={inputRef}
+            ref={ref}
             src={imageUrl}
             id={idName ?? ""}
             name={getSafeRoomName(name)}
