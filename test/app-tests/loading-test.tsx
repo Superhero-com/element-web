@@ -129,9 +129,6 @@ describe("loading:", function () {
             embedded_pages: {
                 home_url: "data:text/html;charset=utf-8;base64,PGh0bWw+PC9odG1sPg==",
             },
-            features: {
-                feature_rust_crypto: false,
-            },
             ...(opts.config ?? {}),
         } as IConfigOptions;
 
@@ -223,9 +220,6 @@ describe("loading:", function () {
             // Pass the liveliness checks
             httpBackend.when("GET", "/versions").respond(200, { versions: SERVER_SUPPORTED_MATRIX_VERSIONS });
             httpBackend.when("GET", "/_matrix/identity/v2").respond(200, {});
-            httpBackend
-                .when("GET", "/_matrix/client/unstable/org.matrix.msc2965/auth_issuer")
-                .respond(404, { errcode: "M_UNRECOGNIZED", error: "Unrecognized request" });
 
             return sleep(1)
                 .then(async () => {
@@ -310,7 +304,6 @@ describe("loading:", function () {
             localStorage.setItem("mx_is_url", "http://localhost");
             localStorage.setItem("mx_access_token", "access_token");
             localStorage.setItem("mx_user_id", "@me:localhost");
-            localStorage.setItem("mx_device_id", "QWERTYUIOP");
             localStorage.setItem("mx_last_room_id", "!last_room:id");
 
             // Create a crypto store as well to satisfy storage consistency checks
