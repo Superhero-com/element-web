@@ -1,10 +1,11 @@
-import { Room, RoomEvent } from "matrix-js-sdk/src/matrix";
+import { IPublicRoomsChunkRoom, Room, RoomEvent } from "matrix-js-sdk/src/matrix";
 import { _t } from "matrix-react-sdk/src/languageHandler";
 import { IOOBData } from "matrix-react-sdk/src/stores/ThreepidInviteStore";
 import { useEffect, useState } from "react";
 import { useTypedEventEmitter } from "matrix-react-sdk/src/hooks/useEventEmitter";
 
-export const getRoomName = (room?: Room, oobName = ""): string => getSafeRoomName(room?.name || oobName);
+export const getRoomName = (room?: Room | IPublicRoomsChunkRoom, oobName = ""): string =>
+    getSafeRoomName(room?.name || oobName);
 
 export function getSafeRoomName(roomName?: string): string {
     return roomName?.replace(/^(\s|\[TG\])*/, "").replace(/^(\s|\$)*/, "") || "";

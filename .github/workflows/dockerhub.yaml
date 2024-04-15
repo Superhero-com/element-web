@@ -46,7 +46,7 @@ jobs:
 
             - name: Docker meta
               id: meta
-              uses: docker/metadata-action@8e5442c4ef9f78752691e2d8f8d19755c6f78e81 # v5
+              uses: docker/metadata-action@31cebacef4805868f9ce9a0cb03ee36c32df2ac4 # v5
               with:
                   images: |
                       superherodotcom/element-web
@@ -68,7 +68,7 @@ jobs:
 
             - name: Update repo description
               if: matrix.variant == 'vanilla'
-              uses: peter-evans/dockerhub-description@e98e4d1628a5f3be2be7c231e50981aee98723ae # v4
+              uses: peter-evans/dockerhub-description@dc67fad7001ef9e8e3c124cb7a64e16d0a63d864 # v4
               continue-on-error: true
               with:
                   username: ${{ secrets.DOCKERHUB_USERNAME }}
