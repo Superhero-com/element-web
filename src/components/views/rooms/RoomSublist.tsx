@@ -443,7 +443,7 @@ export default class RoomSublist extends React.Component<IProps, IState> {
             // find the first room with a count of the same colour as the badge count
             room = RoomListStore.instance.orderedLists[this.getTagId()].find((r: Room) => {
                 const notifState = this.notificationState.getForRoom(r);
-                return notifState.count > 0 && notifState.level === this.notificationState.level;
+                return notifState.count > 0 && notifState.color === this.notificationState.color;
             });
         }
 
@@ -679,7 +679,6 @@ export default class RoomSublist extends React.Component<IProps, IState> {
 
                     const badge = (
                         <NotificationBadge
-                            hideIfDot={true}
                             notification={this.notificationState}
                             onClick={this.onBadgeClick}
                             tabIndex={tabIndex}

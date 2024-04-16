@@ -17,7 +17,7 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
-import React, { forwardRef, useCallback, useContext, useEffect, useState} from "react";
+import React, { forwardRef, useCallback, useContext, useEffect, useState } from "react";
 import classNames from "classnames";
 import { ClientEvent } from "matrix-js-sdk/src/matrix";
 import { Avatar } from "@vector-im/compound-web";
